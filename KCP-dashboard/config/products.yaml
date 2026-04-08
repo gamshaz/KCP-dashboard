@@ -1,0 +1,76 @@
+sofr:
+  root_code: SR3
+  tick_size: 0.005
+  tick_value: 12.50
+  contract_size: 1_000_000
+  day_count: Actual/360
+  strike_spacing: 0.0625
+  kink_threshold: 0.002
+  sofr_ffr_spread_bp: 5.0
+  default_range_ticks:
+    - 6
+    - 12
+    - 18
+
+sonia:
+  root_code: SER
+  tick_size: 0.005
+  tick_value: 12.50
+  contract_size: 1_000_000
+  day_count: Actual/365
+  strike_spacing: 0.0625
+  kink_threshold: null
+  sofr_ffr_spread_bp: null
+
+euribor:
+  root_code: ERB
+  tick_size: 0.005
+  tick_value: 12.50
+  contract_size: 1_000_000
+  day_count: Actual/360
+  strike_spacing: 0.0625
+  kink_threshold: null
+  sofr_ffr_spread_bp: null
+
+bloomberg:
+  daily_hit_budget: 150_000
+  session_host: localhost
+  session_port: 8194
+  request_timeout_seconds: 30
+  ff_contracts:
+    - FF1
+    - FF2
+    - FF3
+    - FF4
+    - FF5
+    - FF6
+    - FF7
+    - FF8
+    - FF9
+    - FF10
+    - FF11
+    - FF12
+    - FF13
+    - FF14
+    - FF15
+    - FF16
+    - FF17
+    - FF18
+    - FF19
+    - FF20
+    - FF21
+    - FF22
+    - FF23
+    - FF24
+  sr3_contracts:
+    - SR3H
+    - SR3M
+    - SR3U
+    - SR3Z
+    - SR3H_1
+    - SR3M_1
+    - SR3U_1
+    - SR3Z_1
+
+fomc:
+  rolling_window_years: 2

@@ -1,0 +1,29 @@
+templates:
+
+  - name: Hold Through Year End
+    type: rule_based
+    rules:
+      - meeting_window: [2026-03, 2026-12]
+        outcome: 0bp
+
+  - name: Two Cuts H2 2026
+    type: explicit
+    meetings:
+      2026-03-19: 0bp
+      2026-05-07: 0bp
+      2026-06-18: 0bp
+      2026-07-30: -25bp
+      2026-09-17: -25bp
+      2026-10-29: 0bp
+      2026-12-10: 0bp
+
+  - name: Aggressive Easing
+    type: explicit
+    meetings:
+      2026-03-19: -25bp
+      2026-05-07: -25bp
+      2026-06-18: -25bp
+      2026-07-30: -25bp
+      2026-09-17: 0bp
+      2026-10-29: 0bp
+      2026-12-10: 0bp
