@@ -35,11 +35,11 @@ A rates desk trading dashboard for SOFR futures and options pricing and scenario
 | Sprint | Files | Status |
 |--------|-------|--------|
 | 1 — Data layer | `utils/cache.py`, `data/base.py`, `bloomberg.py` | ✅ Complete |
-| 2 — Date / product / rates | `utils/date_utils.py`, `products/base.py`, `products/sofr.py`, `rates_engine.py` | 🔄 In progress — `rates_engine.py` not yet written |
-| 3 — Scenario engine | `scenario_engine.py` | ⬜ Pending |
-| 4 — Options pricer | `options_pricer.py` | ⬜ Pending |
-| 5 — Strategy layer | `skew_logic.py`, `trade_structures.py`, `preferences.py` | ⬜ Pending |
-| 6 — Trade builder / ranker | `trade_builder.py`, `ranker.py` | ⬜ Pending |
+| 2 — Date / product / rates | `utils/date_utils.py`, `products/base.py`, `products/sofr.py`, `rates_engine.py` | ✅ Complete |
+| 3 — Scenario engine | `scenario_engine.py` | ✅ Complete |
+| 4 — Options pricer | `options_pricer.py` | ✅ Complete |
+| 5 — Strategy layer | `skew_logic.py`, `trade_structures.py`, `preferences.py` | ✅ Complete |
+| 6 — Trade builder / ranker | `trade_builder.py`, `ranker.py` | ✅ Complete |
 | 7 — Dashboard UI | `dashboard/scenario_panel.py`, `dashboard/trade_panel.py`, `dashboard/greeks_panel.py`, `dashboard/app.py` | ⬜ Pending |
 
 ---

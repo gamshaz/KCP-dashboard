@@ -177,6 +177,12 @@ For each SR3 contract covering calendar days d1 to d2:
 - `underlying_price` — optional float. Supersedes live BBG price
 - All three overrides are independent of each other
 
+**Implementation notes:**
+- `time_to_expiry` is passed in as a pre-computed float (years). Caller computes it via `sofr.year_fraction(val_date, expiry)`. Pricer does not import from the products layer.
+- Theta sign convention: negative = long premium (paying), positive = short premium (receiving). Daily convention (/365 calendar days).
+- `expiry_pnl(legs, terminal_forward)` computes net payoff minus net_premium for the P&L chart.
+- **Vol convention caveat:** Bloomberg IVOL_MID for SR3 options is typically normal (Bachelier) vol in bp, not lognormal. Must validate against PricingMonkey before production use. If confirmed normal, replace Black-76 with Bachelier.
+
 ---
 
 ## 4.4 skew_logic.py
@@ -336,7 +342,13 @@ When `is_default` is True, three instances are generated automatically (±6, ±1
 - Multi-scenario mode: multiple scenarios on same chart vs WIRP. Display only — trade builder operates on one scenario at a time.
 
 ### Persistence
-Custom scenarios saved as YAML in expanded explicit form. Never re-serialised as rule-based shorthand.
+Custom scenarios saved as YAML in expanded explicit form in `saved_scenarios/` directory at repo root. Never re-serialised as rule-based shorthand. `saved_scenarios/` is gitignored — user-specific, not source controlled.
+
+### ValDateManager
+Implemented as a class (`ValDateManager`) rather than module-level functions, so multiple instances can be created in tests or multi-scenario contexts. `get_val_date()` returns today if no override is set.
+
+### assemble_rate_path
+Returns the scenario's explicit `{meeting_date: bp_change}` dict only. rates_engine.py handles WIRP inheritance internally for unspecified meetings — no duplication of that logic here.
 
 ---
 
