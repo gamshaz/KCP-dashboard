@@ -15,8 +15,9 @@ A rates desk trading dashboard for SOFR futures and options pricing and scenario
 ## Python tooling
 
 - Python 3.14 via `uv`
-- Virtual environment at `.venv/` — create with `uv venv`, install with `uv pip install`
-- `blpapi` is NOT on PyPI — install manually from the Bloomberg Developer Portal
+- Virtual environment at `.venv/` in the repo root — create with `uv venv`, install with `uv pip install -r requirements.txt`
+- `.venv/` is gitignored — must be recreated on each machine with `uv venv && uv pip install -r requirements.txt`
+- `blpapi` is NOT on PyPI — install manually from the Bloomberg Developer Portal after the above
 - Run the app with: `uv run streamlit run dashboard/app.py`
 
 ---
