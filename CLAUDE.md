@@ -40,7 +40,7 @@ A rates desk trading dashboard for SOFR futures and options pricing and scenario
 | 4 — Options pricer | `options_pricer.py` | ✅ Complete |
 | 5 — Strategy layer | `skew_logic.py`, `trade_structures.py`, `preferences.py` | ✅ Complete |
 | 6 — Trade builder / ranker | `trade_builder.py`, `ranker.py` | ✅ Complete |
-| 7 — Dashboard UI | `dashboard/scenario_panel.py`, `dashboard/trade_panel.py`, `dashboard/greeks_panel.py`, `dashboard/app.py` | ⬜ Pending |
+| 7 — Dashboard UI | `dashboard/scenario_panel.py`, `dashboard/trade_panel.py`, `dashboard/greeks_panel.py`, `dashboard/app.py` | ✅ Complete |
 
 ---
 
